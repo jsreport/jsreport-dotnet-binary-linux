@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <Version>1.8.2-beta1</Version>
+    <Authors>Jan Blaha</Authors>
+    <Company>jsreport</Company>
+    <Product>jsreport</Product>
+    <Copyright>Copyright 2013-2017 Jan Blaha</Copyright>
+    <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
+    <PackageProjectUrl>https://jsreport.net</PackageProjectUrl>
+    <PackageIconUrl>http://jsreport.net/img/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/jsreport/jsreport-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>jsreport</PackageTags>
+    <Description>The package includes jsreport compiled into single binary for linux. You gonna need also jsreport.Local which wraps it with c# API.</Description>
+    <PackageReleaseNotes>Release notes are at https://github.com/jsreport/jsreport/releases</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.8.2.0</AssemblyVersion>
+    <FileVersion>1.8.2.0</FileVersion>
+    <PackageId>jsreport.Binary.Linux</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jsreport.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="jsreport.zip" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition=" '$(SolutionName)' == 'jsreport.development' ">
+      <ItemGroup>
+        <ProjectReference Include="..\..\jsreport-dotnet-shared\jsreport.Shared\jsreport.Shared.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="jsreport.Shared" Version="1.0.1" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
