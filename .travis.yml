@@ -11,12 +11,4 @@ script:
  - sudo apt-get install -y wget zip
  - chmod +x jsreport.Binary.Linux/download.sh
  - cd jsreport.Binary.Linux.Test && dotnet test
- addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    - llvm-toolchain-precise-3.6
-    packages:
-    - gcc-5
-    - g++-5
-    - clang-3.6
+ 
