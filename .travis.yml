@@ -1,6 +1,7 @@
 language: csharp
 solution: jsreport.Binary.Linux.sln
 mono: none
+sudo: required
 dotnet: 2.0.0
 dist: trusty
 script:
