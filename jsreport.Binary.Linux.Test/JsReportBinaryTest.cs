@@ -35,6 +35,7 @@ namespace jsreport.Binary.Test
                     Arguments = "--version",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
+                    RedirectStandardError = true,
                     CreateNoWindow = true
                 }
             };
