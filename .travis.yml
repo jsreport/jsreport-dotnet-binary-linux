@@ -5,6 +5,7 @@ sudo: required
 dotnet: 2.0.0
 dist: trusty
 script:
+ - sudo apt-get install -y wget zip
  - dotnet restore
  - chmod +x jsreport.Binary.Linux/download.sh
  - ./jsreport.Binary.Linux/download.sh
