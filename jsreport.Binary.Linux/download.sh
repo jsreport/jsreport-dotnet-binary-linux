@@ -1,4 +1,5 @@
-﻿wget https://github.com/jsreport/jsreport/releases/download/2.2.0/jsreport-linux.tar.gz 
+﻿#download the binary from github and zip it as expected by c#
+wget https://github.com/jsreport/jsreport/releases/download/2.2.0/jsreport-linux.tar.gz 
 tar -xzf jsreport-linux.tar.gz 
 mv jsreport jsreport.exe 
 zip jsreport.zip ./jsreport.exe
