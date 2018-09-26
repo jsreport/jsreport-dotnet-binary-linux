@@ -1,19 +1,8 @@
 language: csharp
 solution: jsreport.Binary.Linux.sln
 mono: none
-sudo: required
 dotnet: 2.0.0
 dist: trusty
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    - llvm-toolchain-precise-3.6
-    packages:
-    - gcc-5
-    - g++-5
-    - clang-3.6
-
 script:
  - chmod +x jsreport.Binary.Linux/chrome.sh
  - ./jsreport.Binary.Linux/chrome.sh
