@@ -8,5 +8,4 @@ script:
  - apt-get install -y wget zip
  - dotnet restore
  - chmod +x jsreport.Binary.Linux/download.sh
- - ./jsreport.Binary.Linux/download.sh
  - cd jsreport.Binary.Linux.Test && dotnet test
