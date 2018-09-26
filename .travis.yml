@@ -5,7 +5,7 @@ sudo: required
 dotnet: 2.0.0
 dist: trusty
 script:
- - chmod +x jsreport.Binary.Linux/download.sh
+ - chmod +x jsreport.Binary.Linux/chrome.sh
  - ./jsreport.Binary.Linux/chrome.sh
  - dotnet restore
  - sudo apt-get install -y wget zip
