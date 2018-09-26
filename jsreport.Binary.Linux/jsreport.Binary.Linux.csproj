@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="./download.sh" />
+    <Exec Command="Powershell.exe -ExecutionPolicy ByPass -File download.ps1" />
   </Target>
 
 </Project>

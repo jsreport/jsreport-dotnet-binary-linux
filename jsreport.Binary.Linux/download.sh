@@ -7,3 +7,5 @@ mv jsreport-new.zip jsreport.zip
 rm jsreport-linux.tar.gz
 rm license.txt
 rm jsreport.exe
+
+# the test in travis unfortunatelly still fails on version `GLIBCXX_3.4.20' not found 
