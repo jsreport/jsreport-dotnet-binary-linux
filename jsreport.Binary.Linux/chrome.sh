@@ -1,7 +1,7 @@
 # chrome dependencies
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
-sudo apt-get install libstdc++-4.9-dev
+sudo apt-get install -y libstdc++-4.9-dev
 sudo apt-get install -y libstdc++6 libgcc
 sudo apt-get install -y libgconf-2-4
 sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
