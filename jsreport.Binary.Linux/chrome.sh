@@ -1,5 +1,5 @@
 # chrome dependencies
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo apt-get update
 sudo apt-get install -y libstdc++-4.9-dev
 sudo apt-get install -y libstdc++6 libgcc
