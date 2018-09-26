@@ -25,12 +25,32 @@ namespace jsreport.Binary.Test
             {
                 JsReportBinary.GetBinary().ReadContent().CopyTo(fs);
             }
-            AddExecutePermissions(tmpFile);
+            AddExecutePermissions(tmpFile);  
 
-            var p = Process.Start(tmpFile, "--version");
+            var p = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = tmpFile,
+                    Arguments = "--version",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                }
+            };
 
+            p.Start();
+            while (!p.StandardError.EndOfStream)
+            {
+                Console.WriteLine(p.StandardError.ReadLine());                
+            }
+
+            while (!p.StandardOutput.EndOfStream)
+            {
+                Console.WriteLine(p.StandardOutput.ReadLine());
+            }
+         
             p.WaitForExit();
-
             p.ExitCode.ShouldBe(0);
         }
 
