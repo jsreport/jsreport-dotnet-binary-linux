@@ -8,6 +8,8 @@ environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 build:
   project: jsreport.Binary.Linux.sln
+before_install:
+  - sudo apt-get install -y wget zip
 before_build:
   - cmd: dotnet restore
 deploy:
