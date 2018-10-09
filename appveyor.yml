@@ -10,7 +10,7 @@ build:
   project: jsreport.Binary.Linux.sln
 before_build:
   - cmd: dotnet restore
-  - cmd: cd jsreport.Binary.Linux&&Powershell.exe -ExecutionPolicy ByPass -File download.ps1
+  - cmd: cd jsreport.Binary.Linux&&Powershell.exe -ExecutionPolicy ByPass -File download.ps1&&cd ..
 deploy:
   provider: NuGet
   api_key:
