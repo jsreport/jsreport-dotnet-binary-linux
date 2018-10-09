@@ -44,8 +44,4 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <PackageReference Include="System.IO.Compression" Version="4.3.0" />
   </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="set TargetDir=$(TargetDir)&#xD;&#xA;Powershell.exe -ExecutionPolicy ByPass -File download.ps1" />
-  </Target>
 </Project>
