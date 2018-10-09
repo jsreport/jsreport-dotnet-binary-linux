@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-    <Version>2.2.0</Version>
+    <Version>2.2.1</Version>
     <Authors>Jan Blaha</Authors>
     <Company>jsreport</Company>
     <Product>jsreport</Product>
@@ -15,9 +15,9 @@
     <Description>The package includes jsreport compiled into single binary for linux. You gonna need also jsreport.Local which wraps it with c# API.</Description>
     <PackageReleaseNotes>Release notes are at https://github.com/jsreport/jsreport/releases</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2.2.0.0</AssemblyVersion>
-    <FileVersion>2.2.0.0</FileVersion>
-    <PackageId>jsreport.Binary.Linux</PackageId>
+    <AssemblyVersion>2.2.1.0</AssemblyVersion>
+    <FileVersion>2.2.1.0</FileVersion>
+    <PackageId>jsreport.Binary.Linux</PackageId> 
   </PropertyGroup>
 
   <ItemGroup>
@@ -46,7 +46,6 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="Powershell.exe -ExecutionPolicy ByPass -File download.ps1" />
+    <Exec Command="set TargetDir=$(TargetDir)&#xD;&#xA;Powershell.exe -ExecutionPolicy ByPass -File download.ps1" />
   </Target>
-
 </Project>
