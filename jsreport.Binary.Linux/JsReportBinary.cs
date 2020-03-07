@@ -19,11 +19,7 @@ namespace jsreport.Binary.Linux
             var assembly = typeof(JsReportBinary).GetTypeInfo().Assembly;
 
             return new ReportingBinary("default-linux-" + assembly.GetName().Version.ToString(),
-                () =>
-                {
-                    var zip = new ZipArchive(assembly.GetManifestResourceStream("jsreport.Binary.Linux.jsreport.zip"));
-                    return zip.Entries.First().Open();
-                });
+                () => assembly.GetManifestResourceStream("jsreport.Binary.Linux.jsreport.zip"), true);
         }
     }
 }
