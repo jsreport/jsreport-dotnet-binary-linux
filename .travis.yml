@@ -1,8 +1,5 @@
 language: csharp
 solution: jsreport.Binary.Linux.sln
-mono: none
-dotnet: 2.0.0
-dist: trusty
 script:
  - dotnet restore
  - cd jsreport.Binary.Linux.Test && dotnet test
