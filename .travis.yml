@@ -1,5 +1,10 @@
 language: csharp
 solution: jsreport.Binary.Linux.sln
 script:
+ - chmod +x jsreport.Binary.Linux/chrome.sh
+ - ./jsreport.Binary.Linux/chrome.sh
  - dotnet restore
+ - sudo apt-get install -y wget zip
+ - chmod +x jsreport.Binary.Linux/download.sh
  - cd jsreport.Binary.Linux.Test && dotnet test
+ 
